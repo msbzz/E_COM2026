@@ -128,7 +128,10 @@ class SigninScreen extends StatelessWidget {
                     ),
                   ),
                   TextButton(
-                    onPressed: () => Get.to(() => const SignUpScreen()),
+                    onPressed: () {
+                      debugPrint('CLICOU SIGNUP');
+                      Get.to(() => SignUpScreen());
+                    },
                     child: Text(
                       'SignUp',
                       style: AppTextStyle.withColor(
