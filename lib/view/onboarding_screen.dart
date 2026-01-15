@@ -1,5 +1,8 @@
+import 'package:ecom_2026/controllers/auth_controller.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
+import 'package:ecom_2026/view/signin_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -30,6 +33,13 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
       description: 'Simple and secure shopping experience at your fingertips',
     ),
   ];
+
+  // handle get started button pressed
+  void _handleGetStarted() {
+    final AuthController authController = Get.find<AuthController>();
+    authController.setFiristTimeDone();
+    Get.off(() => const SigninScreen());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,6 +110,56 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                   ),
                 ),
               ),
+            ),
+          ),
+
+          Positioned(
+            bottom: 16,
+            left: 16,
+            right: 16,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TextButton(
+                  onPressed: () => _handleGetStarted(),
+                  child: Text(
+                    "skip",
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.buttonMedium,
+                      isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    if (_currentPage < _items.length) {
+                      _pageController.nextPage(
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeInOut,
+                      );
+                    } else {
+                      _handleGetStarted();
+                    }
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 16,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    _currentPage < _items.length - 1 ? 'Next' : 'Get Stated',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.buttonMedium,
+                      Colors.white,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],
