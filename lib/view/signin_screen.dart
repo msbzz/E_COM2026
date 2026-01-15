@@ -1,4 +1,7 @@
+import 'package:ecom_2026/controllers/auth_controller.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
+import 'package:ecom_2026/view/main_screen.dart';
+import 'package:ecom_2026/view/sign_up_screen.dart';
 import 'package:ecom_2026/view/widgets/custom_textField.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -87,10 +90,65 @@ class SigninScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+              SizedBox(height: 24),
+
+              // sign in button
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: _handleSignIn,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Theme.of(context).primaryColor,
+                    padding: const EdgeInsets.symmetric(vertical: 16),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  child: Text(
+                    'Sign in',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.buttonMedium,
+                      Colors.white,
+                    ),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 24),
+              // signup textbutton
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Don't have an account",
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.bodyLarge,
+                      isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () => Get.to(() => const SignUpScreen()),
+                    child: Text(
+                      'SignUp',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.buttonMedium,
+                        Theme.of(context).primaryColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void _handleSignIn() {
+    final AuthController authController = Get.find<AuthController>();
+    authController.login();
+    Get.offAll(() => const MainScreen());
   }
 }
