@@ -10,7 +10,7 @@ class SignUpScreen extends StatelessWidget {
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmController = TextEditingController();
+  //final TextEditingController _confirmController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,11 +46,13 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 40),
+
+              // full name textfield
               CustomTextField(
                 label: 'Full Name',
                 prefixIcon: Icons.person_outline,
                 keyboardType: TextInputType.name,
-                isPassword: true,
+                isPassword: false,
                 controller: _nameController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -61,12 +63,13 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 16),
+
               // email textfield
               CustomTextField(
                 label: 'Email',
                 prefixIcon: Icons.email,
                 keyboardType: TextInputType.emailAddress,
-                isPassword: true,
+                isPassword: false,
                 controller: _emailController,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -80,6 +83,7 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 16),
+
               // password textfield
               CustomTextField(
                 label: 'Password',
@@ -96,6 +100,7 @@ class SignUpScreen extends StatelessWidget {
               ),
 
               const SizedBox(height: 16),
+
               // confirm password textfield
               CustomTextField(
                 label: 'Password',
@@ -138,7 +143,20 @@ class SignUpScreen extends StatelessWidget {
                 ),
               ),
 
+              const SizedBox(height: 24),
               // signin textbutton
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account ?',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.h1,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

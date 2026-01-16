@@ -3,6 +3,7 @@ import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:ecom_2026/view/main_screen.dart';
 import 'package:ecom_2026/view/sign_up_screen.dart';
 import 'package:ecom_2026/view/widgets/custom_textField.dart';
+import 'package:ecom_2026/view/widgets/forgot_password_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -80,7 +81,7 @@ class SigninScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => ForgotPasswordScreen()),
                   child: Text(
                     'Forgot Password?',
                     style: AppTextStyle.withColor(
@@ -129,7 +130,6 @@ class SigninScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      debugPrint('CLICOU SIGNUP');
                       Get.to(() => SignUpScreen());
                     },
                     child: Text(
