@@ -12,7 +12,7 @@ class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // navigate based on auth state after 2.5 secs
-    Future.delayed(const Duration(milliseconds: 2500), () {
+    Future.delayed(const Duration(milliseconds: 3500), () {
       if (authController.isFirstTime) {
         Get.off(() => const OnboardingScreen());
       } else if (authController.isLoggedIn) {

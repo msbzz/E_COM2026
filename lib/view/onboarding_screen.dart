@@ -132,7 +132,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    if (_currentPage < _items.length) {
+                    if (_currentPage < _items.length - 1) {
                       _pageController.nextPage(
                         duration: Duration(milliseconds: 300),
                         curve: Curves.easeInOut,

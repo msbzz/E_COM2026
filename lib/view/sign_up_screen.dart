@@ -151,7 +151,7 @@ class SignUpScreen extends StatelessWidget {
                   Text(
                     'Already have an account ?',
                     style: AppTextStyle.withColor(
-                      AppTextStyle.h1,
+                      AppTextStyle.bodyMedium,
                       Theme.of(context).textTheme.bodyLarge!.color!,
                     ),
                   ),
