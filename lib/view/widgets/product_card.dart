@@ -74,8 +74,8 @@ class ProductCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(4),
                     ),
                     child: Text(
-                      // discount text
-                      'Discount',
+                      // discount text - bool
+                      '',
                       style: AppTextStyle.withColor(
                         AppTextStyle.withWeight(
                           AppTextStyle.bodySmall,
@@ -112,7 +112,20 @@ class ProductCard extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: screenWidth * 0.01),
-                Text('Aqui é a Row()'),
+                Row(
+                  children: [
+                    Text(
+                      '\$${product.price.toStringAsFixed(2)}',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.withWeight(
+                          AppTextStyle.bodyLarge,
+                          FontWeight.bold,
+                        ),
+                        Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),

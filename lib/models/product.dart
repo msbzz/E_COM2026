@@ -24,7 +24,7 @@ final List<Product> products = [
     category: 'Footwear',
     price: 69.90,
     oldPrice: 189.90,
-    imageUrl: 'https://via.placeholder.com/300x300.png?text=Shoes',
+    imageUrl: 'assets/images/shoe.jpg',
     description: 'Comfortable and stylish shoes for everyday use.',
   ),
   const Product(
@@ -32,7 +32,7 @@ final List<Product> products = [
     category: 'Clothing',
     price: 39.90,
     oldPrice: 79.90,
-    imageUrl: 'https://via.placeholder.com/300x300.png?text=T-Shirt',
+    imageUrl: 'assets/images/t_shirt.png',
     description: 'Cotton t-shirt with modern fit and high durability.',
   ),
   const Product(
@@ -40,7 +40,7 @@ final List<Product> products = [
     category: 'Clothing',
     price: 119.90,
     oldPrice: 199.90,
-    imageUrl: 'https://via.placeholder.com/300x300.png?text=Jeans',
+    imageUrl: 'assets/images/jeans.png',
     description: 'Slim fit jeans made with stretch fabric for comfort.',
   ),
   const Product(
@@ -48,7 +48,7 @@ final List<Product> products = [
     category: 'Accessories',
     price: 89.90,
     oldPrice: 149.90,
-    imageUrl: 'https://via.placeholder.com/300x300.png?text=Backpack',
+    imageUrl: 'assets/images/back_pack.png',
     description: 'Durable backpack ideal for work, travel, or study.',
   ),
   const Product(
@@ -56,7 +56,7 @@ final List<Product> products = [
     category: 'Electronics',
     price: 249.90,
     oldPrice: 399.90,
-    imageUrl: 'https://via.placeholder.com/300x300.png?text=Smart+Watch',
+    imageUrl: 'assets/images/smart_watch.png',
     description: 'Smart watch with health monitoring and notifications.',
   ),
 ];
