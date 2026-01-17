@@ -38,7 +38,7 @@ final List<Product> products = [
   const Product(
     name: 'Jeans',
     category: 'Clothing',
-    price: 119.90,
+    price: 199.90,
     oldPrice: 199.90,
     imageUrl: 'assets/images/jeans.png',
     description: 'Slim fit jeans made with stretch fabric for comfort.',

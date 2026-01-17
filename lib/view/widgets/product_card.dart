@@ -75,7 +75,7 @@ class ProductCard extends StatelessWidget {
                     ),
                     child: Text(
                       // discount text - bool
-                      '',
+                      '${calculateDiscount(product.price, product.oldPrice!)} % OFF',
                       style: AppTextStyle.withColor(
                         AppTextStyle.withWeight(
                           AppTextStyle.bodySmall,
@@ -93,6 +93,7 @@ class ProductCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(screenWidth * 0.02),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   product.name,
@@ -124,6 +125,15 @@ class ProductCard extends StatelessWidget {
                         Theme.of(context).textTheme.bodyLarge!.color!,
                       ),
                     ),
+                    if (product.oldPrice != null)
+                      SizedBox(width: screenWidth * 0.01),
+                    Text(
+                      '\$${product.oldPrice!.toStringAsFixed(2)}',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.bodySmall,
+                        isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                      ).copyWith(decoration: TextDecoration.lineThrough),
+                    ),
                   ],
                 ),
               ],
@@ -132,5 +142,10 @@ class ProductCard extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  // calculate discount
+  int calculateDiscount(double currentPrice, double oldPrice) {
+    return (((oldPrice - currentPrice) / oldPrice) * 100).round();
   }
 }
