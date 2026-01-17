@@ -1,6 +1,7 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
 import 'package:ecom_2026/view/widgets/category_chips.dart';
 import 'package:ecom_2026/view/widgets/custom_search_bar.dart';
+import 'package:ecom_2026/view/widgets/product_grid.dart';
 import 'package:ecom_2026/view/widgets/sale_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -96,6 +97,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             // product grid
+            const Expanded(child: ProductGrid()),
           ],
         ),
       ),
