@@ -1,5 +1,6 @@
 import 'package:ecom_2026/models/product.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
+import 'package:ecom_2026/view/widgets/size_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
@@ -92,8 +93,33 @@ class ProductDetailsScreen extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Text(
+                        product.price.toStringAsFixed(2),
+                        style: AppTextStyle.withColor(
+                          AppTextStyle.h3,
+                          Theme.of(context).textTheme.headlineMedium!.color!,
+                        ),
+                      ),
                     ],
                   ),
+                  Text(
+                    product.name,
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.bodyMedium,
+                      isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.02),
+                  Text(
+                    'Select Size',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.labelMedium,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.01),
+                  // size selector
+                  const SizeSelector(),
                 ],
               ),
             ),
