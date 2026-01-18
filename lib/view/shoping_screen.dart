@@ -1,3 +1,5 @@
+import 'package:ecom_2026/controllers/filter_botton_sheet.dart';
+import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
 class ShopingScreen extends StatelessWidget {
@@ -5,6 +7,35 @@ class ShopingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text('Shoppin Screen')));
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      appBar: AppBar(
+        title: Text(
+          'Shoppin',
+          style: AppTextStyle.withColor(
+            AppTextStyle.h3,
+            isDark ? Colors.white : Colors.black,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.search,
+              color: isDark ? Colors.white : Colors.black,
+            ),
+          ),
+          IconButton(
+            onPressed: () => FilterBottonSheet.show(context),
+            icon: Icon(
+              Icons.filter_list,
+              color: isDark ? Colors.white : Colors.black,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
