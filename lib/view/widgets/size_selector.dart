@@ -26,6 +26,10 @@ class _SizeSelectorState extends State<SizeSelector> {
                 selectedSize = selected ? index : selectedSize;
               });
             },
+            selectedColor: Theme.of(context).primaryColor,
+            labelStyle: TextStyle(
+              color: selectedSize == index ? Colors.white : Colors.black,
+            ),
           ),
         ),
       ),
