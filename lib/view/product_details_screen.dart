@@ -176,21 +176,19 @@ class ProductDetailsScreen extends StatelessWidget {
               SizedBox(height: screenWidth * 0.04),
 
               Expanded(
-                child: OutlinedButton(
+                child: ElevatedButton(
                   onPressed: () {},
-                  style: OutlinedButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.symmetric(
                       vertical: screenHeight * 0.02,
                     ),
-                    side: BorderSide(
-                      color: isDark ? Colors.white70 : Colors.black12,
-                    ),
+                    backgroundColor: Theme.of(context).primaryColor,
                   ),
                   child: Text(
                     'Buy Now',
                     style: AppTextStyle.withColor(
                       AppTextStyle.buttonMedium,
-                      Theme.of(context).textTheme.bodyLarge!.color!,
+                      Colors.white,
                     ),
                   ),
                 ),
