@@ -45,6 +45,7 @@ class ProductDetailsScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Stack(
               children: [
@@ -56,7 +57,45 @@ class ProductDetailsScreen extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                // favorite button
+                Positioned(
+                  child: IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      product.isFavorite
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                      color: product.isFavorite
+                          ? Theme.of(context).primaryColor
+                          : (isDark ? Colors.white : Colors.black),
+                    ),
+                  ),
+                ),
               ],
+            ),
+
+            // product details
+            Padding(
+              padding: EdgeInsets.all(screenWidth * 0.04),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          product.name,
+                          style: AppTextStyle.withColor(
+                            AppTextStyle.h3,
+                            Theme.of(context).textTheme.headlineMedium!.color!,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
