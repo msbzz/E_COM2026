@@ -1,5 +1,6 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
 import 'package:ecom_2026/view/all_products_screen.dart';
+import 'package:ecom_2026/view/cart_screen.dart';
 import 'package:ecom_2026/view/widgets/category_chips.dart';
 import 'package:ecom_2026/view/widgets/custom_search_bar.dart';
 import 'package:ecom_2026/view/widgets/product_grid.dart';
@@ -50,7 +51,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                   // car button
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => CartScreen()),
                     icon: Icon(Icons.shopping_bag_outlined),
                   ),
                   // theme button
