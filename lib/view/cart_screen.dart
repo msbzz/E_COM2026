@@ -114,7 +114,10 @@ class CartScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () => _showDeleteConfirmationDialog(
+                                context,
+                                product,
+                              ),
                               icon: Icon(
                                 Icons.remove,
                                 size: 20,
@@ -146,6 +149,54 @@ class CartScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _showDeleteConfirmationDialog(BuildContext context, Product product) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        contentPadding: const EdgeInsets.all(24),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.red[400]!.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                Icons.delete_outline,
+                color: Colors.red[400],
+                size: 32,
+              ),
+            ),
+            const SizedBox(height: 24),
+            Text(
+              'Remove Item',
+              style: AppTextStyle.withColor(
+                AppTextStyle.h3,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+
+            const SizedBox(height: 8),
+            Text(
+              'Are you sure you want to remove this item from your cart?',
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodyMedium,
+                isDark ? Colors.grey[400]! : Colors.grey[600]!,
+              ),
+            ),
+
+            const SizedBox(height: 24),
+          ],
+        ),
       ),
     );
   }
