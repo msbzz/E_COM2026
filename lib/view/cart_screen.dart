@@ -124,8 +124,16 @@ class CartScreen extends StatelessWidget {
                             Text(
                               '1',
                               style: AppTextStyle.withColor(
-                                AppTextStyle.h3,
+                                AppTextStyle.bodyLarge,
                                 Theme.of(context).primaryColor,
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.add,
+                                size: 20,
+                                color: Theme.of(context).primaryColor,
                               ),
                             ),
                           ],
