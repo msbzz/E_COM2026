@@ -1,4 +1,5 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
+import 'package:ecom_2026/view/all_products_screen.dart';
 import 'package:ecom_2026/view/widgets/category_chips.dart';
 import 'package:ecom_2026/view/widgets/custom_search_bar.dart';
 import 'package:ecom_2026/view/widgets/product_grid.dart';
@@ -86,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () => Get.to(() => const AllProductsScreen()),
                     child: Text(
                       'See All',
                       style: TextStyle(color: Theme.of(context).primaryColor),
