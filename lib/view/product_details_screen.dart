@@ -120,10 +120,60 @@ class ProductDetailsScreen extends StatelessWidget {
                   SizedBox(height: screenWidth * 0.01),
                   // size selector
                   const SizeSelector(),
+
+                  SizedBox(height: screenWidth * 0.02),
+
+                  Text(
+                    'Description',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.labelMedium,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                  SizedBox(height: screenWidth * 0.01),
+
+                  Text(
+                    product.description,
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.bodySmall,
+                      isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
+        ),
+      ),
+
+      //buttons
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.all(screenWidth * 0.04),
+          child: Row(
+            children: [
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: () {},
+                  style: OutlinedButton.styleFrom(
+                    padding: EdgeInsets.symmetric(
+                      vertical: screenHeight * 0.02,
+                    ),
+                    side: BorderSide(
+                      color: isDark ? Colors.white70 : Colors.black12,
+                    ),
+                  ),
+                  child: Text(
+                    'Add To Cart',
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.buttonMedium,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
