@@ -35,6 +35,7 @@ class CartScreen extends StatelessWidget {
                   _buildCartItem(context, products[index]),
             ),
           ),
+          _buildCartSummery(context),
         ],
       ),
     );
@@ -218,10 +219,73 @@ class CartScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 16),
+
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // add delete logic
+                      Get.back();
+                    },
+                    style: OutlinedButton.styleFrom(
+                      backgroundColor: Colors.red[400],
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      'Remove',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.bodyMedium,
+                        Colors.white,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ],
         ),
+      ),
+      barrierColor: Colors.black54,
+    );
+  }
+
+  Widget _buildCartSummery(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+        boxShadow: [BoxShadow(blurRadius: 10, offset: Offset(0, -5))],
+      ),
+
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Total (5 items)',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodyMedium,
+                  Theme.of(context).textTheme.bodyLarge!.color!,
+                ),
+              ),
+              Text(
+                '\$649.50',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.h2,
+                  Theme.of(context).primaryColor,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
