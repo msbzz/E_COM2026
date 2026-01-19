@@ -46,13 +46,27 @@ class WishlistScreen extends StatelessWidget {
         borderRadius: const BorderRadius.vertical(bottom: Radius.circular(16)),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            '$favoriteProducts Items',
-            style: AppTextStyle.withColor(
-              AppTextStyle.h2,
-              Theme.of(context).textTheme.bodyLarge!.color!,
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                '$favoriteProducts Items',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.h2,
+                  Theme.of(context).textTheme.bodyLarge!.color!,
+                ),
+              ),
+              SizedBox(height: 4),
+              Text(
+                'in your wishlist',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodyMedium,
+                  isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                ),
+              ),
+            ],
           ),
         ],
       ),
