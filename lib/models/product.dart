@@ -32,6 +32,7 @@ final List<Product> products = [
     category: 'Clothing',
     price: 39.90,
     oldPrice: 79.90,
+    isFavorite: true,
     imageUrl: 'assets/images/t_shirt.png',
     description: 'Cotton t-shirt with modern fit and high durability.',
   ),
