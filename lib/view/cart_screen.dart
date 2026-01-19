@@ -195,6 +195,31 @@ class CartScreen extends StatelessWidget {
             ),
 
             const SizedBox(height: 24),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () => Get.back(),
+                    style: OutlinedButton.styleFrom(
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      side: BorderSide(
+                        color: isDark ? Colors.white70 : Colors.black12,
+                      ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      'Cancel',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.bodyMedium,
+                        Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
