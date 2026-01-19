@@ -30,7 +30,24 @@ class WishlistScreen extends StatelessWidget {
         ],
       ),
       body: CustomScrollView(
-        slivers: [SliverToBoxAdapter(child: _buildSummarySection(context))],
+        slivers:
+            // summary section
+            [
+              SliverToBoxAdapter(child: _buildSummarySection(context)),
+              //wishlist item
+              SliverPadding(
+                padding: const EdgeInsets.all(16),
+                sliver: SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) => _buildWishlistItem(
+                      context,
+                      products.where((p) => p.isFavorite).toList()[index],
+                    ),
+                    childCount: products.where((p) => p.isFavorite).length,
+                  ),
+                ),
+              ),
+            ],
       ),
     );
   }
@@ -67,6 +84,57 @@ class WishlistScreen extends StatelessWidget {
                 ),
               ),
             ],
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+            ),
+            child: Text(
+              'Add All to Cart',
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodyMedium,
+                Colors.white,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildWishlistItem(BuildContext context, Product product) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 12),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.grey.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: const Offset(0, 2),
+          ),
+        ],
+      ),
+
+      child: Row(
+        children: [
+          // product image
+          ClipRRect(
+            borderRadius: const BorderRadius.horizontal(
+              left: Radius.circular(12),
+            ),
+            child: Image.asset(
+              product.imageUrl,
+              width: 120,
+              height: 120,
+              fit: BoxFit.cover,
+            ),
           ),
         ],
       ),
