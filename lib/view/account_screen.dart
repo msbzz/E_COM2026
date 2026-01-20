@@ -29,7 +29,13 @@ class AccountScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(children: [_buildProfileSection(context)]),
+        child: Column(
+          children: [
+            _buildProfileSection(context),
+            SizedBox(height: 24),
+            _buildMenuSection(context),
+          ],
+        ),
       ),
     );
   }
@@ -70,7 +76,11 @@ class AccountScreen extends StatelessWidget {
             style: OutlinedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
               side: BorderSide(color: isDark ? Colors.white70 : Colors.black12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
             ),
+
             child: Text(
               'Edit Profile',
               style: AppTextStyle.withColor(
@@ -80,6 +90,47 @@ class AccountScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildMenuSection(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness;
+
+    final menuItems = [
+      {'icon': Icons.shopping_bag_outlined, 'title': 'MyOrders'},
+      {'icon': Icons.location_on_outlined, 'title': 'Shipping Address'},
+      {'icon': Icons.help_outline, 'title': 'Help Center'},
+      {'icon': Icons.logout_outlined, 'title': 'Logout'},
+    ];
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16),
+      child: Column(
+        children: menuItems.map((item) {
+          return Container(
+            margin: const EdgeInsets.only(bottom: 8),
+            decoration: BoxDecoration(
+              color: Theme.of(context).cardColor,
+              borderRadius: BorderRadius.circular(12),
+              boxShadow: [
+                BoxShadow(
+                  color: isDark
+                      ? Colors.black.withValues(alpha: 0.2)
+                      : Colors.grey.withValues(alpha: 0.1),
+                  blurRadius: 8,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
+            child: ListTile(
+              leading: Icon(
+                item['icon'] as IconData,
+                color: Theme.of(context).primaryColor,
+              ),
+            ),
+          );
+        }).toList(),
       ),
     );
   }
