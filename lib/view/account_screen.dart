@@ -1,4 +1,6 @@
+import 'package:ecom_2026/controllers/auth_controller.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
+import 'package:ecom_2026/view/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -212,6 +214,34 @@ class AccountScreen extends StatelessWidget {
                       style: AppTextStyle.withColor(
                         AppTextStyle.buttonMedium,
                         Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ),
+                ),
+
+                SizedBox(width: 16),
+
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      final AuthController authController =
+                          Get.find<AuthController>();
+                      authController.logout();
+                      Get.offAll(() => SigninScreen());
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Theme.of(context).primaryColor,
+                      elevation: 0,
+                      padding: const EdgeInsets.symmetric(vertical: 12),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      'Logout',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.buttonMedium,
+                        Colors.white,
                       ),
                     ),
                   ),
