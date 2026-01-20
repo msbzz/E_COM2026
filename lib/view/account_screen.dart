@@ -56,6 +56,29 @@ class AccountScreen extends StatelessWidget {
               Theme.of(context).textTheme.bodyLarge!.color!,
             ),
           ),
+          const SizedBox(height: 4),
+          Text(
+            'alexjohnson@gmail.com',
+            style: AppTextStyle.withColor(
+              AppTextStyle.bodyMedium,
+              isDark ? Colors.grey[400]! : Colors.grey[600]!,
+            ),
+          ),
+          const SizedBox(height: 16),
+          OutlinedButton(
+            onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+              side: BorderSide(color: isDark ? Colors.white70 : Colors.black12),
+            ),
+            child: Text(
+              'Edit Profile',
+              style: AppTextStyle.withColor(
+                AppTextStyle.buttonMedium,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+          ),
         ],
       ),
     );
