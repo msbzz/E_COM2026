@@ -149,6 +149,26 @@ class WishlistScreen extends StatelessWidget {
                       Theme.of(context).textTheme.bodyLarge!.color!,
                     ),
                   ),
+                  SizedBox(height: 4),
+                  Text(
+                    product.category,
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.bodySmall,
+                      isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Row(
+                    children: [
+                      Text(
+                        '\$${product.price.toStringAsFixed(2)}',
+                        style: AppTextStyle.withColor(
+                          AppTextStyle.h3,
+                          Theme.of(context).textTheme.bodyLarge!.color!,
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
