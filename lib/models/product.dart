@@ -57,6 +57,7 @@ final List<Product> products = [
     category: 'Electronics',
     price: 249.90,
     oldPrice: 399.90,
+    isFavorite: true,
     imageUrl: 'assets/images/smart_watch.png',
     description: 'Smart watch with health monitoring and notifications.',
   ),
