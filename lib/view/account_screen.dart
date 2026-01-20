@@ -1,3 +1,4 @@
+import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
 class AccountScreen extends StatelessWidget {
@@ -5,6 +6,58 @@ class AccountScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: const Text('Account Screen')));
+    final screenSize = MediaQuery.of(context).size;
+    final isDark = Theme.of(context).brightness == Brightness;
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Account Screen',
+          style: AppTextStyle.withColor(
+            AppTextStyle.h3,
+            isDark ? Colors.white : Colors.black,
+          ),
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.settings_outlined,
+              color: isDark ? Colors.white : Colors.black,
+            ),
+          ),
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Column(children: [_buildProfileSection(context)]),
+      ),
+    );
+  }
+
+  Widget _buildProfileSection(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness;
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        color: isDark ? Colors.grey[850] : Colors.grey[100],
+        borderRadius: BorderRadius.vertical(bottom: Radius.circular(24)),
+      ),
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 50,
+            backgroundImage: AssetImage('assets/images/avatar.jpg'),
+          ),
+          Text(
+            'Alex Johnson',
+            style: AppTextStyle.withColor(
+              AppTextStyle.h2,
+              Theme.of(context).textTheme.bodyLarge!.color!,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
