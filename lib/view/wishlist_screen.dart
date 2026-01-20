@@ -136,6 +136,23 @@ class WishlistScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.name,
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.bodyLarge,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
