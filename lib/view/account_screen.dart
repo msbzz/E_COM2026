@@ -128,6 +128,17 @@ class AccountScreen extends StatelessWidget {
                 item['icon'] as IconData,
                 color: Theme.of(context).primaryColor,
               ),
+              title: Text(
+                item['title'] as String,
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodyMedium,
+                  Theme.of(context).textTheme.bodyLarge!.color!,
+                ),
+              ),
+              trailing: Icon(
+                Icons.chevron_right,
+                color: isDark ? Colors.grey[400] : Colors.grey[600],
+              ),
             ),
           );
         }).toList(),
