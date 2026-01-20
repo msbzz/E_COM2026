@@ -167,12 +167,25 @@ class WishlistScreen extends StatelessWidget {
                           Theme.of(context).textTheme.bodyLarge!.color!,
                         ),
                       ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.shopping_cart_outlined,
-                          color: Theme.of(context).primaryColor,
-                        ),
+                      Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.shopping_cart_outlined,
+                              color: Theme.of(context).primaryColor,
+                            ),
+                          ),
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.delete_outlined,
+                              color: isDark
+                                  ? Colors.grey[400]!
+                                  : Colors.grey[600]!,
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
