@@ -32,30 +32,35 @@ class SettingsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildSection(context, 'Appearance', [_buildThemeToggle(context)]),
+
             _buildSection(context, 'Notifications', [
-              _buildThemeTile(
+              _buildSwitchTile(
                 context,
                 'Push Notifications',
                 'Recieve push notifications about order and promotions',
                 true,
               ),
-            ]),
-            _buildSection(context, 'Notifications', [
-              _buildThemeTile(
+              _buildSwitchTile(
                 context,
                 'Email Notifications',
                 'Recieve email updates about your orders',
                 false,
               ),
+            ]),
 
-              _buildSection(context, 'Privacy', [
-                _builNavigationTile(
-                  context,
-                  'Privacy Policy',
-                  'View our privacy policy',
-                  Icons.privacy_tip_outlined,
-                ),
-              ]),
+            _buildSection(context, 'Privacy', [
+              _builNavigationTile(
+                context,
+                'Privacy Policy',
+                'View our privacy policy',
+                Icons.privacy_tip_outlined,
+              ),
+              _builNavigationTile(
+                context,
+                'Terms of Service',
+                'Read our terms of sevice',
+                Icons.description_outlined,
+              ),
             ]),
           ],
         ),
@@ -128,7 +133,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildThemeTile(
+  Widget _buildSwitchTile(
     BuildContext context,
     String title,
     String subtitle,
