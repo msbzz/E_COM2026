@@ -1,7 +1,7 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
 import 'package:ecom_2026/features/all_products_screen.dart';
 import 'package:ecom_2026/features/cart_screen.dart';
-import 'package:ecom_2026/features/notifications/view/notifcations_screen.dart';
+import 'package:ecom_2026/features/notifications/view/notifications_screen.dart';
 import 'package:ecom_2026/features/widgets/category_chips.dart';
 import 'package:ecom_2026/features/widgets/custom_search_bar.dart';
 import 'package:ecom_2026/features/widgets/product_grid.dart';
@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                   Spacer(),
                   // notification icon
                   IconButton(
-                    onPressed: () => Get.to(() => NotifcationsScreen()),
+                    onPressed: () => Get.to(() => NotificationsScreen()),
                     icon: Icon(Icons.notifications_outlined),
                   ),
                   // car button
