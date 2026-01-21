@@ -1,6 +1,6 @@
 import 'package:ecom_2026/models/product.dart';
-import 'package:ecom_2026/view/product_details_screen.dart';
-import 'package:ecom_2026/view/widgets/product_card.dart';
+import 'package:ecom_2026/features/product_details_screen.dart';
+import 'package:ecom_2026/features/widgets/product_card.dart';
 import 'package:flutter/material.dart';
 
 class ProductGrid extends StatelessWidget {

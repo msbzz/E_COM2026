@@ -1,15 +1,16 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
-import 'package:ecom_2026/view/all_products_screen.dart';
-import 'package:ecom_2026/view/cart_screen.dart';
-import 'package:ecom_2026/view/widgets/category_chips.dart';
-import 'package:ecom_2026/view/widgets/custom_search_bar.dart';
-import 'package:ecom_2026/view/widgets/product_grid.dart';
-import 'package:ecom_2026/view/widgets/sale_banner.dart';
+import 'package:ecom_2026/features/all_products_screen.dart';
+import 'package:ecom_2026/features/cart_screen.dart';
+import 'package:ecom_2026/features/notifications/view/notifcations_screen.dart';
+import 'package:ecom_2026/features/widgets/category_chips.dart';
+import 'package:ecom_2026/features/widgets/custom_search_bar.dart';
+import 'package:ecom_2026/features/widgets/product_grid.dart';
+import 'package:ecom_2026/features/widgets/sale_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class HomeScreen extends StatelessWidget {
                   Spacer(),
                   // notification icon
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () => Get.to(() => NotifcationsScreen()),
                     icon: Icon(Icons.notifications_outlined),
                   ),
                   // car button

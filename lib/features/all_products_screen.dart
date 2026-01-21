@@ -1,6 +1,6 @@
 import 'package:ecom_2026/controllers/filter_botton_sheet.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
-import 'package:ecom_2026/view/widgets/product_grid.dart';
+import 'package:ecom_2026/features/widgets/product_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

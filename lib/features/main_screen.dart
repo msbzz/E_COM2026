@@ -1,10 +1,10 @@
 import 'package:ecom_2026/controllers/navigation_controller.dart';
 import 'package:ecom_2026/controllers/theme_controller.dart';
-import 'package:ecom_2026/view/account_screen.dart';
-import 'package:ecom_2026/view/home_screen.dart';
-import 'package:ecom_2026/view/shoping_screen.dart';
-import 'package:ecom_2026/view/widgets/custom_bottom_navbar.dart';
-import 'package:ecom_2026/view/wishlist_screen.dart';
+import 'package:ecom_2026/features/account_screen.dart';
+import 'package:ecom_2026/features/home_screen.dart';
+import 'package:ecom_2026/features/shoping_screen.dart';
+import 'package:ecom_2026/features/widgets/custom_bottom_navbar.dart';
+import 'package:ecom_2026/features/wishlist_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

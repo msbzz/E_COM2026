@@ -1,7 +1,7 @@
 import 'package:ecom_2026/controllers/auth_controller.dart';
-import 'package:ecom_2026/view/main_screen.dart';
-import 'package:ecom_2026/view/onboarding_screen.dart';
-import 'package:ecom_2026/view/signin_screen.dart';
+import 'package:ecom_2026/features/main_screen.dart';
+import 'package:ecom_2026/features/onboarding_screen.dart';
+import 'package:ecom_2026/features/signin_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
