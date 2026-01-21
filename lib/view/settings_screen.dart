@@ -32,6 +32,14 @@ class SettingsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildSection(context, 'Appearance', [_buildThemeToggle(context)]),
+            _buildSection(context, 'Notifications', [
+              _buildThemeTile(
+                context,
+                'Push Notifications',
+                'Recieve push notifications about order and promotions',
+                false,
+              ),
+            ]),
           ],
         ),
       ),
@@ -98,6 +106,53 @@ class SettingsScreen extends StatelessWidget {
             //activeColor: Theme.of(context).primaryColor,
             activeThumbColor: Theme.of(context).primaryColor,
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildThemeTile(
+    BuildContext context,
+    String title,
+    String subtitle,
+    bool initialvalue,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.grey.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ListTile(
+        title: Text(
+          title,
+          style: AppTextStyle.withColor(
+            AppTextStyle.bodyMedium,
+            Theme.of(context).textTheme.bodyLarge!.color!,
+          ),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: AppTextStyle.withColor(
+            AppTextStyle.bodySmall,
+            isDark ? Colors.grey[400]! : Colors.grey[600]!,
+          ),
+        ),
+        trailing: Switch.adaptive(
+          value: initialvalue,
+          onChanged: (value) => {},
+          //activeColor: Theme.of(context).primaryColor,
+          activeThumbColor: Theme.of(context).primaryColor,
         ),
       ),
     );
