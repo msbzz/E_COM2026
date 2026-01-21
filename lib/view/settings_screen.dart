@@ -62,6 +62,15 @@ class SettingsScreen extends StatelessWidget {
                 Icons.description_outlined,
               ),
             ]),
+
+            _buildSection(context, 'About', [
+              _builNavigationTile(
+                context,
+                'App Version',
+                '1.0.0',
+                Icons.info_outline,
+              ),
+            ]),
           ],
         ),
       ),
