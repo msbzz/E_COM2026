@@ -87,6 +87,13 @@ class NotificationsScreen extends StatelessWidget {
             color: NotificationUtils.getIconColor(context, notification.type),
           ),
         ),
+        title: Text(
+          notification.title,
+          style: AppTextStyle.withColor(
+            AppTextStyle.bodyLarge,
+            Theme.of(context).textTheme.bodyLarge!.color!,
+          ),
+        ),
       ),
     );
   }
