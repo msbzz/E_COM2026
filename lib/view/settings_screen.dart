@@ -37,8 +37,25 @@ class SettingsScreen extends StatelessWidget {
                 context,
                 'Push Notifications',
                 'Recieve push notifications about order and promotions',
+                true,
+              ),
+            ]),
+            _buildSection(context, 'Notifications', [
+              _buildThemeTile(
+                context,
+                'Email Notifications',
+                'Recieve email updates about your orders',
                 false,
               ),
+
+              _buildSection(context, 'Privacy', [
+                _builNavigationTile(
+                  context,
+                  'Privacy Policy',
+                  'View our privacy policy',
+                  Icons.privacy_tip_outlined,
+                ),
+              ]),
             ]),
           ],
         ),
@@ -73,7 +90,7 @@ class SettingsScreen extends StatelessWidget {
   Widget _buildThemeToggle(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return GetBuilder<ThemeController>(
-      builder: (controler) => Container(
+      builder: (controller) => Container(
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         decoration: BoxDecoration(
           color: Theme.of(context).cardColor,
@@ -90,7 +107,7 @@ class SettingsScreen extends StatelessWidget {
         ),
         child: ListTile(
           leading: Icon(
-            controler.isDarkMode ? Icons.dark_mode : Icons.light_mode,
+            controller.isDarkMode ? Icons.dark_mode : Icons.light_mode,
             color: Theme.of(context).primaryColor,
           ),
           title: Text(
@@ -101,8 +118,8 @@ class SettingsScreen extends StatelessWidget {
             ),
           ),
           trailing: Switch.adaptive(
-            value: controler.isDarkMode,
-            onChanged: (value) => controler.toggleTheme(),
+            value: controller.isDarkMode,
+            onChanged: (value) => controller.toggleTheme(),
             //activeColor: Theme.of(context).primaryColor,
             activeThumbColor: Theme.of(context).primaryColor,
           ),
@@ -154,6 +171,53 @@ class SettingsScreen extends StatelessWidget {
           //activeColor: Theme.of(context).primaryColor,
           activeThumbColor: Theme.of(context).primaryColor,
         ),
+      ),
+    );
+  }
+
+  Widget _builNavigationTile(
+    BuildContext context,
+    String title,
+    String subtitle,
+    IconData icon,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Container(
+      margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.grey.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: ListTile(
+        leading: Icon(icon, color: Theme.of(context).primaryColor),
+        title: Text(
+          title,
+          style: AppTextStyle.withColor(
+            AppTextStyle.bodyMedium,
+            Theme.of(context).textTheme.bodyLarge!.color!,
+          ),
+        ),
+        subtitle: Text(
+          subtitle,
+          style: AppTextStyle.withColor(
+            AppTextStyle.bodySmall,
+            isDark ? Colors.grey[400]! : Colors.grey[600]!,
+          ),
+        ),
+        trailing: Icon(
+          Icons.chevron_right,
+          color: isDark ? Colors.grey[400] : Colors.grey[600],
+        ),
+        onTap: () {},
       ),
     );
   }
