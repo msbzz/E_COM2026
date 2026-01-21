@@ -94,6 +94,19 @@ class NotificationsScreen extends StatelessWidget {
             Theme.of(context).textTheme.bodyLarge!.color!,
           ),
         ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 4),
+            Text(
+              notification.message,
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodySmall,
+                isDark ? Colors.grey[400]! : Colors.grey[600]!,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
