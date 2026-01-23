@@ -78,6 +78,22 @@ class OrderCart extends StatelessWidget {
               ],
             ),
           ),
+
+          Divider(height: 1, color: Colors.grey.shade200),
+
+          InkWell(
+            onTap: onViewDetails,
+            child: Padding(
+              padding: EdgeInsets.symmetric(vertical: 12),
+              child: Text(
+                'View Details',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodySmall,
+                  Theme.of(context).primaryColor,
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
