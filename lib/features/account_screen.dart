@@ -149,7 +149,7 @@ class AccountScreen extends StatelessWidget {
                   _showLogoutDialot(context);
                 } else if (item['title'] == 'My Order') {
                   //navigation to my orders
-                  Get.to(() => const MyOrdersScreens());
+                  Get.to(() => MyOrdersScreens());
                 } else if (item['title'] == 'Shipping Address') {
                   //navigation to Shipping Address
                 } else if (item['title'] == 'Help Center') {
