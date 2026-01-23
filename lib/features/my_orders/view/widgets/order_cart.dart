@@ -1,6 +1,7 @@
 import 'package:ecom_2026/features/my_orders/model/order.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/src/extensions/string_extensions.dart';
 
 class OrderCart extends StatelessWidget {
   final Order order;
@@ -58,6 +59,19 @@ class OrderCart extends StatelessWidget {
                           Theme.of(context).textTheme.bodyLarge!.color!,
                         ),
                       ),
+                      const SizedBox(height: 4),
+
+                      Text(
+                        '${order.itemCount} items . \$${order.totalAmount.toStringAsFixed(2)}',
+                        style: AppTextStyle.withColor(
+                          AppTextStyle.bodyMedium,
+                          isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                        ),
+                      ),
+
+                      const SizedBox(height: 8),
+
+                      _buildStatusChip(context, order.statusString),
                     ],
                   ),
                 ),
@@ -65,6 +79,33 @@ class OrderCart extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildStatusChip(BuildContext context, String type) {
+    Color getStatusColor() {
+      switch (type) {
+        case 'active':
+          return Colors.blue;
+        case 'completed':
+          return Colors.green;
+        case 'canceled':
+          return Colors.red;
+        default:
+          return Colors.grey;
+      }
+    }
+
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+      decoration: BoxDecoration(
+        color: getStatusColor().withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        type.capitalize!,
+        style: AppTextStyle.withColor(AppTextStyle.bodySmall, getStatusColor()),
       ),
     );
   }
