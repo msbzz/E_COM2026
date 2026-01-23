@@ -1,4 +1,5 @@
 import 'package:ecom_2026/controllers/auth_controller.dart';
+import 'package:ecom_2026/features/my_orders/view/screens/my_orders_screens.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:ecom_2026/features/settings_screen.dart';
 import 'package:ecom_2026/features/signin_screen.dart';
@@ -102,7 +103,7 @@ class AccountScreen extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     final menuItems = [
-      {'icon': Icons.shopping_bag_outlined, 'title': 'MyOrders'},
+      {'icon': Icons.shopping_bag_outlined, 'title': 'My Order'},
       {'icon': Icons.location_on_outlined, 'title': 'Shipping Address'},
       {'icon': Icons.help_outline, 'title': 'Help Center'},
       {'icon': Icons.logout_outlined, 'title': 'Logout'},
@@ -148,6 +149,7 @@ class AccountScreen extends StatelessWidget {
                   _showLogoutDialot(context);
                 } else if (item['title'] == 'My Order') {
                   //navigation to my orders
+                  Get.to(() => const MyOrdersScreens());
                 } else if (item['title'] == 'Shipping Address') {
                   //navigation to Shipping Address
                 } else if (item['title'] == 'Help Center') {
