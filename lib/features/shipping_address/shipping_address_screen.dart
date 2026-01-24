@@ -205,6 +205,28 @@ class ShippingAddressScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: OutlinedButton(
+                    onPressed: () => Get.back(),
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      side: BorderSide(
+                        color: isDark ? Colors.grey[700]! : Colors.grey[200]!,
+                      ),
+                    ),
+                    child: Text(
+                      'Cancel',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.buttonMedium,
+                        Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
         actions: [],
