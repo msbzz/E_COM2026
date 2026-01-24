@@ -1,4 +1,5 @@
 import 'package:ecom_2026/features/shipping_address/model/address.dart';
+import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
 class AddressCard extends StatelessWidget {
@@ -42,6 +43,48 @@ class AddressCard extends StatelessWidget {
                   child: Icon(
                     Icons.location_on,
                     color: Theme.of(context).primaryColor,
+                  ),
+                ),
+
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          Text(
+                            address.label,
+                            style: AppTextStyle.withColor(
+                              AppTextStyle.h3,
+                              Theme.of(context).textTheme.bodyLarge!.color!,
+                            ),
+                          ),
+                          if (address.isDefault) ...[
+                            const SizedBox(width: 8),
+                            Container(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: 8,
+                                vertical: 4,
+                              ),
+                              decoration: BoxDecoration(
+                                color: Theme.of(
+                                  context,
+                                ).primaryColor.withValues(alpha: 0.1),
+                                borderRadius: BorderRadius.circular(8),
+                              ),
+                              child: Text(
+                                'Default',
+                                style: AppTextStyle.withColor(
+                                  AppTextStyle.bodySmall,
+                                  Theme.of(context).primaryColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ],
