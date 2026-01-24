@@ -56,7 +56,7 @@ class ShippingAddressScreen extends StatelessWidget {
     );
   }
 
-  void _showEdditAddressButtonSheet(BuildContext context, Address addresss) {
+  void _showEdditAddressButtonSheet(BuildContext context, Address address) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
 
     Get.bottomSheet(
@@ -89,7 +89,46 @@ class ShippingAddressScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
+            _buildTextField(
+              context,
+              'Label (e.g Home, Office)',
+              Icons.label_outline,
+              initialValue: address.label,
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTextField(
+    BuildContext context,
+    String label,
+    IconData icon, {
+    String? initialValue,
+  }) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return TextFormField(
+      initialValue: initialValue,
+      decoration: InputDecoration(
+        labelText: label,
+        prefixIcon: Icon(icon, color: Theme.of(context).primaryColor),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+          ),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(
+            color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+          ),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Theme.of(context).primaryColor),
         ),
       ),
     );
