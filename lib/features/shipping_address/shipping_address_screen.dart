@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/shipping_address/model/address.dart';
 import 'package:ecom_2026/features/shipping_address/repositories/address_repository.dart';
 import 'package:ecom_2026/features/shipping_address/widgets/address_card.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
@@ -48,6 +49,49 @@ class ShippingAddressScreen extends StatelessWidget {
   Widget _buildAddressCard(BuildContext context, int index) {
     final address = _repository.getAddresses()[index];
 
-    return AddressCard(address: address);
+    return AddressCard(
+      address: address,
+      onEdit: () => _showEdditAddressButtonSheet(context, address),
+      //onDelete: () => _showDeleteConfirmation(context),
+    );
+  }
+
+  void _showEdditAddressButtonSheet(BuildContext context, Address addresss) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
+    Get.bottomSheet(
+      Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Edit Address',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.h3,
+                    Theme.of(context).textTheme.bodyLarge!.color!,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Icon(
+                    Icons.close,
+                    color: isDark ? Colors.white : Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
