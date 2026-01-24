@@ -215,12 +215,40 @@ class ShippingAddressScreen extends StatelessWidget {
                       side: BorderSide(
                         color: isDark ? Colors.grey[700]! : Colors.grey[200]!,
                       ),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
                     ),
                     child: Text(
                       'Cancel',
                       style: AppTextStyle.withColor(
                         AppTextStyle.buttonMedium,
                         Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Expanded(
+                  child: ElevatedButton(
+                    onPressed: () {
+                      // handle delete address
+                      Get.back();
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                      padding: EdgeInsets.symmetric(vertical: 12),
+                      elevation: 0,
+
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      'delete',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.buttonMedium,
+                        Colors.white,
                       ),
                     ),
                   ),
