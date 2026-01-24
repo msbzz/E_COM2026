@@ -94,6 +94,46 @@ class ProfileImage extends StatelessWidget {
                 Theme.of(context).textTheme.bodyLarge!.color!,
               ),
             ),
+            const SizedBox(height: 24),
+            _buildOptionTile(
+              context,
+              'Take Photo',
+              Icons.camera_alt_outlined,
+              () => Get.back(),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOptionTile(
+    BuildContext context,
+    String title,
+    IconData icon,
+    VoidCallback onTap,
+  ) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Theme.of(context).cardColor,
+          borderRadius: BorderRadius.circular(12),
+          boxShadow: [
+            BoxShadow(
+              color: isDark
+                  ? Colors.black.withValues(alpha: 0.2)
+                  : Colors.grey.withValues(alpha: 0.1),
+              blurRadius: 8,
+              offset: const Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: Theme.of(context).primaryColor, size: 24),
           ],
         ),
       ),
