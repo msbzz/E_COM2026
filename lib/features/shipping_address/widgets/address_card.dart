@@ -84,6 +84,15 @@ class AddressCard extends StatelessWidget {
                           ],
                         ],
                       ),
+
+                      const SizedBox(height: 8),
+                      Text(
+                        '${address.fullAddress}\n${address.city}, ${address.state} ${address.zipCode}',
+                        style: AppTextStyle.withColor(
+                          AppTextStyle.bodyMedium,
+                          isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                        ),
+                      ),
                     ],
                   ),
                 ),
