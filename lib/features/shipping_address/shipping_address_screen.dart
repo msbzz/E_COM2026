@@ -96,6 +96,66 @@ class ShippingAddressScreen extends StatelessWidget {
               Icons.label_outline,
               initialValue: address.label,
             ),
+            const SizedBox(height: 16),
+            _buildTextField(
+              context,
+              'Full Address',
+              Icons.location_on_outlined,
+              initialValue: address.fullAddress,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(
+              context,
+              'City',
+              Icons.location_city_outlined,
+              initialValue: address.city,
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildTextField(
+                    context,
+                    'State',
+                    Icons.map_outlined,
+                    initialValue: address.state,
+                  ),
+                ),
+
+                const SizedBox(width: 16),
+                Expanded(
+                  child: _buildTextField(
+                    context,
+                    'Zip Code',
+                    Icons.pin_outlined,
+                    initialValue: address.zipCode,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.back();
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'Update Address',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.buttonMedium,
+                    Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
