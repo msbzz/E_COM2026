@@ -1,4 +1,5 @@
 import 'package:ecom_2026/controllers/auth_controller.dart';
+import 'package:ecom_2026/features/edit_profile/views/screens/edit_profile_screen.dart';
 import 'package:ecom_2026/features/my_orders/view/screens/my_orders_screens.dart';
 import 'package:ecom_2026/features/shipping_address/shipping_address_screen.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
@@ -78,7 +79,7 @@ class AccountScreen extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           OutlinedButton(
-            onPressed: () {},
+            onPressed: () => Get.to(() => EditProfileScreen()),
             style: OutlinedButton.styleFrom(
               padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
               side: BorderSide(color: isDark ? Colors.white70 : Colors.black12),
