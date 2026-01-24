@@ -180,7 +180,31 @@ class ShippingAddressScreen extends StatelessWidget {
                 color: Colors.red.withValues(alpha: 0.1),
                 shape: BoxShape.circle,
               ),
+              child: const Icon(
+                Icons.delete_outline,
+                color: Colors.red,
+                size: 32,
+              ),
             ),
+            const SizedBox(height: 16),
+            Text(
+              'Delete Address',
+              style: AppTextStyle.withColor(
+                AppTextStyle.h3,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+            const SizedBox(height: 16),
+
+            Text(
+              'Are you sure want to delete this address?',
+              textAlign: TextAlign.center,
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodyMedium,
+                isDark ? Colors.grey[400]! : Colors.grey[600]!,
+              ),
+            ),
+            const SizedBox(height: 16),
           ],
         ),
         actions: [],
