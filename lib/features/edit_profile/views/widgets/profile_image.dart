@@ -1,4 +1,6 @@
+import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({super.key});
@@ -28,7 +30,7 @@ class ProfileImage extends StatelessWidget {
             bottom: 0,
             right: 0,
             child: GestureDetector(
-              onTap: () {},
+              onTap: () => _showImagePickerBottomSheet(context),
               child: Container(
                 padding: EdgeInsets.all(8),
                 decoration: BoxDecoration(
@@ -53,6 +55,47 @@ class ProfileImage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  void _showImagePickerBottomSheet(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    Get.bottomSheet(
+      Container(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withValues(alpha: 0.1),
+              blurRadius: 8,
+              offset: Offset(0, -5),
+            ),
+          ],
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Container(
+              width: 40,
+              height: 20,
+              decoration: BoxDecoration(
+                color: isDark ? Colors.white : Colors.black,
+              ),
+            ),
+
+            const SizedBox(height: 24),
+            Text(
+              'Change Profile Picture',
+              style: AppTextStyle.withColor(
+                AppTextStyle.h3,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
