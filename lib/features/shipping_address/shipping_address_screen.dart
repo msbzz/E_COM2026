@@ -257,8 +257,8 @@ class ShippingAddressScreen extends StatelessWidget {
             ),
           ],
         ),
-        actions: [],
       ),
+      barrierColor: Colors.black54,
     );
   }
 
