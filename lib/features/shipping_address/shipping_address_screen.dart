@@ -308,6 +308,7 @@ class ShippingAddressScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
                   'Add New Address',
@@ -326,12 +327,6 @@ class ShippingAddressScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 24),
-            _buildTextField(
-              context,
-              'Label (e.g , Home, Office)',
-              Icons.label_outline,
-            ),
-            const SizedBox(height: 16),
             _buildTextField(
               context,
               'Label (e.g , Home, Office)',
@@ -360,6 +355,20 @@ class ShippingAddressScreen extends StatelessWidget {
                   ),
                 ),
               ],
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => Get.back(),
+                child: Text(
+                  'Save Address',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.buttonMedium,
+                    Colors.white,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
