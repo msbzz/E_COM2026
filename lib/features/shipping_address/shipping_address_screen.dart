@@ -52,7 +52,7 @@ class ShippingAddressScreen extends StatelessWidget {
     return AddressCard(
       address: address,
       onEdit: () => _showEdditAddressButtonSheet(context, address),
-      //onDelete: () => _showDeleteConfirmation(context),
+      onDelete: () => _showDeleteConfirmation(context),
     );
   }
 
@@ -156,8 +156,33 @@ class ShippingAddressScreen extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 16),
           ],
         ),
+      ),
+      isScrollControlled: true,
+    );
+  }
+
+  void _showDeleteConfirmation(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    Get.dialog(
+      AlertDialog(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        contentPadding: const EdgeInsets.all(24),
+        content: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.red.withValues(alpha: 0.1),
+                shape: BoxShape.circle,
+              ),
+            ),
+          ],
+        ),
+        actions: [],
       ),
     );
   }

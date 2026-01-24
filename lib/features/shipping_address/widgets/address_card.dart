@@ -5,12 +5,12 @@ import 'package:flutter/material.dart';
 class AddressCard extends StatelessWidget {
   final Address address;
   final VoidCallback onEdit;
-  //final VoidCallback onDelete;
+  final VoidCallback onDelete;
 
   AddressCard({
     super.key,
     required this.address,
-    //required this.onDelete,
+    required this.onDelete,
     required this.onEdit,
   });
 
@@ -138,7 +138,7 @@ class AddressCard extends StatelessWidget {
               Container(width: 1, height: 8, color: Colors.grey.shade200),
               Expanded(
                 child: InkWell(
-                  onTap: () {}, //onDelete,
+                  onTap: onDelete, //onDelete,
                   child: Padding(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     child: Row(
