@@ -325,6 +325,42 @@ class ShippingAddressScreen extends StatelessWidget {
                 ),
               ],
             ),
+            const SizedBox(height: 24),
+            _buildTextField(
+              context,
+              'Label (e.g , Home, Office)',
+              Icons.label_outline,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(
+              context,
+              'Label (e.g , Home, Office)',
+              Icons.label_outline,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(
+              context,
+              'full Address',
+              Icons.location_on_outlined,
+            ),
+            const SizedBox(height: 16),
+            _buildTextField(context, 'city', Icons.location_city_outlined),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: _buildTextField(context, 'State', Icons.map_outlined),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: _buildTextField(
+                    context,
+                    'Zip Code',
+                    Icons.pin_outlined,
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),
