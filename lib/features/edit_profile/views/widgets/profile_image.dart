@@ -95,9 +95,19 @@ class ProfileImage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 24),
+
             _buildOptionTile(
               context,
               'Take Photo',
+              Icons.camera_alt_outlined,
+              () => Get.back(),
+            ),
+
+            const SizedBox(height: 16),
+
+            _buildOptionTile(
+              context,
+              'Chose from Gallery',
               Icons.camera_alt_outlined,
               () => Get.back(),
             ),
@@ -134,6 +144,19 @@ class ProfileImage extends StatelessWidget {
         child: Row(
           children: [
             Icon(icon, color: Theme.of(context).primaryColor, size: 24),
+            const SizedBox(width: 16),
+            Text(
+              title,
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodyMedium,
+                Theme.of(context).textTheme.bodyLarge!.color!,
+              ),
+            ),
+            const Spacer(),
+            Icon(
+              Icons.arrow_forward_ios,
+              color: isDark ? Colors.grey[400] : Colors.grey[600],
+            ),
           ],
         ),
       ),
