@@ -22,13 +22,24 @@ class ContactSupportSection extends StatelessWidget {
             color: Theme.of(context).primaryColor,
             size: 48,
           ),
+          const SizedBox(height: 8),
           Text(
             'Still need help?',
             style: AppTextStyle.withColor(
               AppTextStyle.h3,
-              isDark ? Colors.white : Colors.black,
+              Theme.of(context).textTheme.bodyLarge!.color!,
             ),
           ),
+          const SizedBox(height: 8),
+          Text(
+            'Contact our support team',
+            style: AppTextStyle.withColor(
+              AppTextStyle.bodyMedium,
+              isDark ? Colors.grey[400]! : Colors.grey[600]!,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 16),
         ],
       ),
     );
