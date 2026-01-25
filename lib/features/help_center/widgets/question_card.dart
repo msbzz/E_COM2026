@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class QuestionCard extends StatelessWidget {
   final String title;
@@ -33,7 +36,84 @@ class QuestionCard extends StatelessWidget {
             Theme.of(context).textTheme.bodyLarge!.color!,
           ),
         ),
+        onTap: () => _showAnswerBottomSheet(context, title, isDark),
       ),
     );
+  }
+
+  void _showAnswerBottomSheet(
+    BuildContext context,
+    String question,
+    bool isDark,
+  ) {
+    Get.bottomSheet(
+      Container(
+        padding: const EdgeInsets.all(24),
+        decoration: BoxDecoration(
+          color: Theme.of(context).scaffoldBackgroundColor,
+          borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: Text(
+                    question,
+                    style: AppTextStyle.withColor(
+                      AppTextStyle.h3,
+                      Theme.of(context).textTheme.bodyLarge!.color!,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed: () => Get.back(),
+                  icon: Icon(
+                    Icons.close,
+                    color: isDark ? Colors.black : Colors.white,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            Text(
+              _getAnswer(question),
+              style: AppTextStyle.withColor(
+                AppTextStyle.bodyMedium,
+                isDark ? Colors.grey[400]! : Colors.grey[600]!,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  String _getAnswer(String question) {
+    final answers = {
+      'How to track my orders':
+          'To track your order:\n\n'
+          '1. Go to "My Orders" in your account\n'
+          '2. Select the order you want to track\n'
+          '3. Click on "Track Order"\n'
+          '4. You\'ll see real time updates about your packages location\n\n'
+          'You can also click on tracking number in your order confirmation email to track youy package directly.',
+      'How to return an item?':
+          'To return an item:\n\n'
+          '1. Go to "My Orders" in your account\n'
+          '2. Select the order with the item to return\n'
+          '3. Click on "Return Item"\n'
+          '4. Select the reason for return"\n'
+          '5. Print the return label"\n'
+          '6. Pack the item securely"\n'
+          '7. Drop off the package at the nearnest shipping location"\n\n'
+          'Returns must be initiated within 30 days of delivery. Once we receivw the item, your refund will be processed wthin 5-7 bussiness days.',
+    };
+
+    return answers[question] ??
+        'Information not availeble. Please contact support for assintance';
   }
 }
