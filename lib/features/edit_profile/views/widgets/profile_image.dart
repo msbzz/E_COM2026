@@ -108,7 +108,7 @@ class ProfileImage extends StatelessWidget {
             _buildOptionTile(
               context,
               'Chose from Gallery',
-              Icons.camera_alt_outlined,
+              Icons.photo_library_outlined,
               () => Get.back(),
             ),
           ],

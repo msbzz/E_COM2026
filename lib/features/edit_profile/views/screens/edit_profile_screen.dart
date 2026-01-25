@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/edit_profile/views/widgets/profile_form.dart';
 import 'package:ecom_2026/features/edit_profile/views/widgets/profile_image.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,14 @@ class EditProfileScreen extends StatelessWidget {
         ),
       ),
       body: const SingleChildScrollView(
-        child: Column(children: [SizedBox(height: 24), ProfileImage()]),
+        child: Column(
+          children: [
+            SizedBox(height: 24),
+            ProfileImage(),
+            SizedBox(height: 16),
+            ProfileForm(),
+          ],
+        ),
       ),
     );
   }
