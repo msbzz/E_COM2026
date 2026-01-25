@@ -86,6 +86,20 @@ class QuestionCard extends StatelessWidget {
                 isDark ? Colors.grey[400]! : Colors.grey[600]!,
               ),
             ),
+            const SizedBox(height: 24),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () => Get.back(),
+                child: Text(
+                  'Got It',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.buttonMedium,
+                    Colors.white,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
