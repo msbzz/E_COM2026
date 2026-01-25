@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/help_center/widgets/contact_support_section.dart';
 import 'package:ecom_2026/features/help_center/widgets/help_categories_section.dart';
 import 'package:ecom_2026/features/help_center/widgets/popular_questions_section.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
@@ -37,6 +38,8 @@ class HelpCenterScreen extends StatelessWidget {
             const PopularQuestionsSection(),
             const SizedBox(height: 24),
             const HelpCategoriesSection(),
+            const SizedBox(height: 24),
+            const ContactSupportSection(),
           ],
         ),
       ),
