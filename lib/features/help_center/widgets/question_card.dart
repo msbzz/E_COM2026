@@ -91,6 +91,10 @@ class QuestionCard extends StatelessWidget {
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () => Get.back(),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  padding: const EdgeInsets.symmetric(vertical: 16),
+                ),
                 child: Text(
                   'Got It',
                   style: AppTextStyle.withColor(
