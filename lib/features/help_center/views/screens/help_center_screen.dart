@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/help_center/widgets/help_categories_section.dart';
 import 'package:ecom_2026/features/help_center/widgets/popular_questions_section.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,10 @@ class HelpCenterScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildSearchBar(context, isDark),
-            PopularQuestionsSection(),
+            const SizedBox(height: 24),
+            const PopularQuestionsSection(),
+            const SizedBox(height: 24),
+            const HelpCategoriesSection(),
           ],
         ),
       ),
