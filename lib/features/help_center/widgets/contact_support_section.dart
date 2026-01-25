@@ -39,7 +39,24 @@ class ContactSupportSection extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: 8),
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Theme.of(context).primaryColor,
+              padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+            ),
+            child: Text(
+              'Contact Support',
+              style: AppTextStyle.withColor(
+                AppTextStyle.buttonMedium,
+                Colors.white,
+              ),
+            ),
+          ),
         ],
       ),
     );
