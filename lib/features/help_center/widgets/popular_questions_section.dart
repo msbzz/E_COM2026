@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/help_center/widgets/question_card.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
@@ -19,6 +20,11 @@ class PopularQuestionsSection extends StatelessWidget {
               AppTextStyle.h3,
               Theme.of(context).textTheme.bodyLarge!.color!,
             ),
+          ),
+          const SizedBox(height: 16),
+          QuestionCard(
+            title: 'How to track my order ?',
+            icon: Icons.local_shipping_outlined,
           ),
         ],
       ),
