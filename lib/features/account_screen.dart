@@ -1,5 +1,6 @@
 import 'package:ecom_2026/controllers/auth_controller.dart';
 import 'package:ecom_2026/features/edit_profile/views/screens/edit_profile_screen.dart';
+import 'package:ecom_2026/features/help_center/views/screens/help_center_screen.dart';
 import 'package:ecom_2026/features/my_orders/view/screens/my_orders_screens.dart';
 import 'package:ecom_2026/features/shipping_address/shipping_address_screen.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
@@ -150,13 +151,11 @@ class AccountScreen extends StatelessWidget {
                 if (item['title'] == 'Logout') {
                   _showLogoutDialot(context);
                 } else if (item['title'] == 'My Order') {
-                  //navigation to my orders
                   Get.to(() => MyOrdersScreens());
                 } else if (item['title'] == 'Shipping Address') {
-                  //navigation to Shipping Address
                   Get.to(() => ShippingAddressScreen());
                 } else if (item['title'] == 'Help Center') {
-                  //navigation to Help Center
+                  Get.to(() => HelpCenterScreen());
                 }
               },
             ),
