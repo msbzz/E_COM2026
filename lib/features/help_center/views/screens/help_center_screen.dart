@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/help_center/widgets/popular_questions_section.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,8 +29,11 @@ class HelpCenterScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [_buildSearchBar(context, isDark)],
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildSearchBar(context, isDark),
+            PopularQuestionsSection(),
+          ],
         ),
       ),
     );
