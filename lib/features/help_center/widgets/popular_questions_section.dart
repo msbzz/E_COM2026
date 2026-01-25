@@ -23,7 +23,7 @@ class PopularQuestionsSection extends StatelessWidget {
           ),
           const SizedBox(height: 16),
           QuestionCard(
-            title: 'How to track my order ?',
+            title: 'How to track my order?',
             icon: Icons.local_shipping_outlined,
           ),
         ],
