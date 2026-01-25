@@ -26,6 +26,50 @@ class HelpCenterScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [_buildSearchBar(context, isDark)],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSearchBar(BuildContext context, bool isDark) {
+    return Container(
+      margin: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: Theme.of(context).cardColor,
+        borderRadius: BorderRadius.circular(12),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha: 0.2)
+                : Colors.grey.withValues(alpha: 0.1),
+            blurRadius: 8,
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: TextField(
+        decoration: InputDecoration(
+          hintText: 'Serch for help',
+          hintStyle: AppTextStyle.withColor(
+            AppTextStyle.bodyMedium,
+            isDark ? Colors.grey[400]! : Colors.grey[600]!,
+          ),
+          prefixIcon: Icon(
+            Icons.search,
+            color: isDark ? Colors.grey[400]! : Colors.grey[600]!,
+          ),
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
+          filled: false,
+          fillColor: Theme.of(context).cardColor,
+        ),
+      ),
     );
   }
 }
