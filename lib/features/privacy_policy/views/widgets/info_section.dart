@@ -11,6 +11,7 @@ class InfoSection extends StatelessWidget {
     final isDark = Theme.of(context).brightness == Brightness.dark;
     return Container(
       margin: const EdgeInsets.only(bottom: 24),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Theme.of(context).cardColor,
         borderRadius: BorderRadius.circular(16),
