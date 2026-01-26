@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/privacy_policy/views/widgets/info_section.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,21 @@ class TermsOfServicesScreen extends StatelessWidget {
           style: AppTextStyle.withColor(
             AppTextStyle.h3,
             isDark ? Colors.white : Colors.black,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: EdgeInsets.all(screenSize.width * 0.05),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InfoSection(
+                title: 'Welcome to Fashion Store',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
+            ],
           ),
         ),
       ),
