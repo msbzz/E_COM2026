@@ -31,6 +31,31 @@ class TermsOfServicesScreen extends StatelessWidget {
                 content:
                     'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
               ),
+              InfoSection(
+                title: 'Account Registration',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
+              InfoSection(
+                title: 'User Responsibilities',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
+              InfoSection(
+                title: 'Privace Policy',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
+              InfoSection(
+                title: 'Intellectual Property',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
+              InfoSection(
+                title: 'Termination',
+                content:
+                    'By accessing and using this application, you accespt and agree to be bound terms and provision of this agreement.',
+              ),
             ],
           ),
         ),
