@@ -33,12 +33,21 @@ class AddressCard extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Home',
                       style: AppTextStyle.withColor(
-                        AppTextStyle.bodyMedium,
+                        AppTextStyle.bodyLarge,
                         Theme.of(context).textTheme.bodyLarge!.color!,
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      '123 Main Street, Apt 48\nNew York, NY 10001',
+                      style: AppTextStyle.withColor(
+                        AppTextStyle.bodySmall,
+                        isDark ? Colors.grey[400]! : Colors.grey[600]!,
                       ),
                     ),
                   ],
