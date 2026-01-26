@@ -1,3 +1,4 @@
+import 'package:ecom_2026/features/checkout/widgets/address_card.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +30,11 @@ class CheckoutScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [_buildSectionTitle(context, 'Shipping Address')],
+          children: [
+            _buildSectionTitle(context, 'Shipping Address'),
+            const SizedBox(height: 16),
+            AddressCard(),
+          ],
         ),
       ),
     );
