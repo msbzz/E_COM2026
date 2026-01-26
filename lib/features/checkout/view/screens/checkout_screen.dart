@@ -25,6 +25,24 @@ class CheckoutScreen extends StatelessWidget {
           ),
         ),
       ),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.all(24),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [_buildSectionTitle(context, 'Shipping Address')],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildSectionTitle(BuildContext context, String title) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Text(
+      title,
+      style: AppTextStyle.withColor(
+        AppTextStyle.h3,
+        isDark ? Colors.white : Colors.black,
+      ),
     );
   }
 }
