@@ -1,5 +1,6 @@
 import 'package:ecom_2026/controllers/theme_controller.dart';
 import 'package:ecom_2026/features/privacy_policy/views/screens/Privacy_policy_screen.dart';
+import 'package:ecom_2026/features/term_of_service/view/screens/terms_of_services_screen.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -62,6 +63,7 @@ class SettingsScreen extends StatelessWidget {
                 'Terms of Service',
                 'Read our terms of sevice',
                 Icons.description_outlined,
+                onTap: () => Get.to(() => const TermsOfServicesScreen()),
               ),
             ]),
 
