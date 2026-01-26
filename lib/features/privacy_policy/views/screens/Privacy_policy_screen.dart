@@ -31,7 +31,7 @@ class PrivacyPolicyScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.all(screenSize.width * 0.05),
-          child: const Column(
+          child: Column(
             children: [
               InfoSection(
                 title: 'Information We Collect',
@@ -62,6 +62,15 @@ class PrivacyPolicyScreen extends StatelessWidget {
                 title: 'Coockies Policy',
                 content:
                     'We collect information that you provide directly to us, including name, email address, and shipping information.',
+              ),
+              const SizedBox(height: 24),
+
+              Text(
+                'Last update: March 2024',
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodySmall,
+                  isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                ),
               ),
             ],
           ),
