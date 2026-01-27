@@ -1,5 +1,8 @@
+import 'package:ecom_2026/features/home_screen.dart';
+import 'package:ecom_2026/features/my_orders/view/screens/my_orders_screens.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 
 class OrderConfirmationScreen extends StatelessWidget {
@@ -49,7 +52,7 @@ class OrderConfirmationScreen extends StatelessWidget {
               ),
               const SizedBox(height: 48),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => MyOrdersScreens()),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).primaryColor,
                   padding: const EdgeInsets.symmetric(
@@ -65,6 +68,19 @@ class OrderConfirmationScreen extends StatelessWidget {
                   style: AppTextStyle.withColor(
                     AppTextStyle.buttonMedium,
                     Colors.white,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextButton(
+                onPressed: () {
+                  Get.offAll(() => HomeScreen());
+                },
+                child: Text(
+                  'Continue Shopping',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.buttonMedium,
+                    Theme.of(context).primaryColor,
                   ),
                 ),
               ),
