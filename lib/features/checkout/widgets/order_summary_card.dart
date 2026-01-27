@@ -29,7 +29,10 @@ class OrderSummaryCard extends StatelessWidget {
           _buildSummaryRow(context, 'Shipping', '\$10.00'),
           const SizedBox(height: 8),
           _buildSummaryRow(context, 'Shipping', '\$53.00'),
-          const SizedBox(height: 8),
+          const Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: Divider(),
+          ),
         ],
       ),
     );
