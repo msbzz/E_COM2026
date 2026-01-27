@@ -1,4 +1,5 @@
 import 'package:ecom_2026/features/checkout/widgets/address_card.dart';
+import 'package:ecom_2026/features/checkout/widgets/order_summary_card.dart';
 import 'package:ecom_2026/features/checkout/widgets/payment_method_card.dart';
 import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,12 @@ class CheckoutScreen extends StatelessWidget {
             AddressCard(),
             const SizedBox(height: 24),
             _buildSectionTitle(context, 'Payment Method'),
+            const SizedBox(height: 16),
             const PaymentMethodCard(),
+            const SizedBox(height: 24),
+            _buildSectionTitle(context, 'Order Sumamary'),
+            const SizedBox(height: 16),
+            OrderSummaryCard(),
           ],
         ),
       ),
