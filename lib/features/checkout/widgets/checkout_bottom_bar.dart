@@ -31,7 +31,7 @@ class CheckoutBottomBar extends StatelessWidget {
           ],
         ),
         child: ElevatedButton(
-          onPressed: () {},
+          onPressed: onPlaceOrder,
           style: ElevatedButton.styleFrom(
             backgroundColor: Theme.of(context).primaryColor,
             padding: const EdgeInsets.symmetric(vertical: 16),
