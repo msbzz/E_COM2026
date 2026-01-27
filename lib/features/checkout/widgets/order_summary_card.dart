@@ -33,6 +33,7 @@ class OrderSummaryCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Divider(),
           ),
+          _buildSummaryRow(context, 'Total', '\$662.93', isTotal: true),
         ],
       ),
     );
