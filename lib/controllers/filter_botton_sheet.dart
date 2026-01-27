@@ -92,7 +92,7 @@ class FilterBottonSheet {
                 ],
               ),
 
-              const SizedBox(width: 24),
+              const SizedBox(height: 24),
 
               Text(
                 'Categories',
@@ -102,7 +102,7 @@ class FilterBottonSheet {
                 ),
               ),
 
-              const SizedBox(width: 16),
+              const SizedBox(height: 16),
 
               Wrap(
                 spacing: 8,
@@ -138,7 +138,7 @@ class FilterBottonSheet {
                         .toList(),
               ),
 
-              const SizedBox(width: 24),
+              const SizedBox(height: 24),
 
               SizedBox(
                 width: double.infinity,
