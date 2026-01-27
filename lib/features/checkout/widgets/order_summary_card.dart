@@ -24,7 +24,7 @@ class OrderSummaryCard extends StatelessWidget {
       ),
       child: Column(
         children: [
-          _buildSummaryRow(context, 'SubTotal', '\$599.93'),
+          _buildSummaryRow(context, 'SubTotal', '\$649.50'),
           const SizedBox(height: 8),
           _buildSummaryRow(context, 'Shipping', '\$10.00'),
           const SizedBox(height: 8),
@@ -33,7 +33,7 @@ class OrderSummaryCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Divider(),
           ),
-          _buildSummaryRow(context, 'Total', '\$662.93', isTotal: true),
+          _buildSummaryRow(context, 'Total', '\$712.50', isTotal: true),
         ],
       ),
     );
