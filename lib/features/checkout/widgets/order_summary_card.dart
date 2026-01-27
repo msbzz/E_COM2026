@@ -23,9 +23,7 @@ class OrderSummaryCard extends StatelessWidget {
         ],
       ),
       child: Column(
-        children: [
-          Row(children: [_buildSummaryRow(context, 'SubTotal', '\$599.93')]),
-        ],
+        children: [_buildSummaryRow(context, 'SubTotal', '\$599.93')],
       ),
     );
   }
