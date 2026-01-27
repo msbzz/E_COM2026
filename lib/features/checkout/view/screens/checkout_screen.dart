@@ -55,7 +55,12 @@ class CheckoutScreen extends StatelessWidget {
           // generate a random order number(in real app, this would comee from backend)
           final orderNumber =
               'ORD${DateTime.now().millisecondsSinceEpoch.toString().substring(7)}';
-          Get.to(() => OrderConfirmationScreen());
+          Get.to(
+            () => OrderConfirmationScreen(
+              orderNumber: orderNumber,
+              totalAmount: 712.50,
+            ),
+          );
         },
       ),
     );

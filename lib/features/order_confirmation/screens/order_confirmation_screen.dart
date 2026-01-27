@@ -1,10 +1,37 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class OrderConfirmationScreen extends StatelessWidget {
-  const OrderConfirmationScreen({super.key});
+  final String orderNumber;
+  final double totalAmount;
+
+  const OrderConfirmationScreen({
+    super.key,
+    required this.orderNumber,
+    required this.totalAmount,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text('Order Confirmarion Screen')));
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    return Scaffold(
+      appBar: AppBar(title: Text('Order Confirmarion Screen')),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(24),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Lottie.asset(
+                'assets/animations/order_success.json',
+                width: 200,
+                height: 200,
+                repeat: false,
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
