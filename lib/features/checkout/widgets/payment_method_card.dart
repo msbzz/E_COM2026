@@ -38,6 +38,7 @@ class PaymentMethodCard extends StatelessWidget {
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       'Visa ending in 4242',
@@ -56,6 +57,11 @@ class PaymentMethodCard extends StatelessWidget {
                     ),
                   ],
                 ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: Icon(Icons.edit_outlined),
+                color: Theme.of(context).primaryColor,
               ),
             ],
           ),
