@@ -47,6 +47,27 @@ class OrderConfirmationScreen extends StatelessWidget {
                   isDark ? Colors.grey[400]! : Colors.grey[600]!,
                 ),
               ),
+              const SizedBox(height: 48),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 48,
+                    vertical: 16,
+                  ),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text(
+                  'Track Order',
+                  style: AppTextStyle.withColor(
+                    AppTextStyle.buttonMedium,
+                    Colors.white,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
