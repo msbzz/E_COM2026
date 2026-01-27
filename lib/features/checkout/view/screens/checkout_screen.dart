@@ -43,7 +43,7 @@ class CheckoutScreen extends StatelessWidget {
             const SizedBox(height: 16),
             const PaymentMethodCard(),
             const SizedBox(height: 24),
-            _buildSectionTitle(context, 'Order Sumamary'),
+            _buildSectionTitle(context, 'Order Summary'),
             const SizedBox(height: 16),
             OrderSummaryCard(),
           ],
