@@ -1,3 +1,4 @@
+import 'package:ecom_2026/utils/app_textstyles.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -27,6 +28,24 @@ class OrderConfirmationScreen extends StatelessWidget {
                 width: 200,
                 height: 200,
                 repeat: false,
+              ),
+              const SizedBox(height: 32),
+              Text(
+                'Order Confirmed',
+                textAlign: TextAlign.center,
+                style: AppTextStyle.withColor(
+                  AppTextStyle.h2,
+                  isDark ? Colors.white : Colors.black,
+                ),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Your order #$orderNumber has been successfully placed',
+                textAlign: TextAlign.center,
+                style: AppTextStyle.withColor(
+                  AppTextStyle.bodyLarge,
+                  isDark ? Colors.grey[400]! : Colors.grey[600]!,
+                ),
               ),
             ],
           ),
