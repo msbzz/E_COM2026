@@ -42,7 +42,7 @@ class CheckoutBottomBar extends StatelessWidget {
           child: Text(
             'Place Order (\$${totalAmount.toStringAsFixed(2)})',
             style: AppTextStyle.withColor(
-              AppTextStyle.bodyMedium,
+              AppTextStyle.buttonMedium,
               Colors.white,
             ),
           ),
